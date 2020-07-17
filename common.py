@@ -22,6 +22,8 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--no-sandbox")
 
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
 sizes = {
     '24.0': '.lbl0', '24.5': '.lbl1', '25.0': '.lbl2', '25.5': '.lbl3', '26.0':'.lbl4', '26.5': '.lbl5',
     '27.0': '.lbl6', '27.5': '.lbl7', '28.0': '.lbl8', '28.5': '.lbl9', '29.0': '.lbl10', '30.0': '.lbl11'
@@ -30,7 +32,12 @@ sizes = {
 def booking_architectureandsneakers(url, size, amount, id):
     # driver = webdriver.Chrome(executable_path="/Volumes/Data/ProjectPrograming/python/seleniumdriver/chromedriver")
     # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
-    driver = webdriver.Chrome(chrome_options=chrome_options)
+    # driver = webdriver.Chrome(chrome_options=chrome_options)
+    driver = webdriver.Remote(
+        command_executor='http://hub:4444/wd/hub',
+        desired_capabilities=DesiredCapabilities.CHROME,
+    )
+
     driver.set_window_size(1366, 728)
 
     driver.get(url)
