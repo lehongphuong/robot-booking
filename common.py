@@ -34,7 +34,7 @@ def booking_architectureandsneakers(url, size, amount, id):
     # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     # driver = webdriver.Chrome(chrome_options=chrome_options)
     driver = webdriver.Remote(
-        command_executor='http://hub:4444/wd/hub',
+        command_executor='127.0.0.1:4444/wd/hub',
         desired_capabilities=DesiredCapabilities.CHROME,
     )
 
