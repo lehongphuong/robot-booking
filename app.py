@@ -9,7 +9,7 @@ import random
 import io
 import os
 import threading
-from firebase import firebase
+# from firebase import firebase
 
 from flask_cors import CORS
 import flask

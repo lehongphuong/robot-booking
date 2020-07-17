@@ -8,7 +8,7 @@ import time
 import random 
 import io
 import os
-import database
+# import database
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -161,7 +161,7 @@ def booking_architectureandsneakers(url, size, amount, id):
         print('time to much 5')
 
     print('end job booking')
-    database.update_status(id)
+    # database.update_status(id)
     # time.sleep(5)
     driver.close() 
 
